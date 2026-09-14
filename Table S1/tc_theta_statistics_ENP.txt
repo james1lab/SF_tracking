@@ -1,0 +1,84 @@
+JTWC ENP DETECTION BY ETCs_TOTAL AND TC THETA DISTRIBUTION
+ETC source: unfiltered global ETCs_TOTAL.txt (no NH/SH PSI-layer preselection)
+JTWC points were preselected before matching [min,max) deg N:      5.0    25.0
+JTWC longitude sector used [min,max) deg E:     220.0    280.0
+WNP/CP/ENP points were pooled from BEST/WNP and BEST/ENP and classified by point longitude.
+Observed longitude min/max of analyzed JTWC points (deg E):    220.000   279.800
+Only points inside this latitude range participate in one-to-one matching.
+Only JTWC best-track points at 00, 06, 12, and 18 UTC are used.
+No separate BEST/CP directory is used; CP points are taken from pooled BEST/WNP and BEST/ENP records.
+Theta statistics use all successfully matched points in this range.
+THETA500 = ETC column 15, used directly
+THETA300 = ETC column 16, used directly
+No conversion or scaling is applied to either value.
+ETC records: 3074759
+JTWC data period: 1990-2024
+JTWC tropical best-track points in selected latitude/time range: 14376
+Matching rule: every JTWC point -> nearest UNUSED same-time ETC record (one-to-one)
+Maximum matching distance:    500.0 km
+Matched JTWC points in selected latitude range: 12230
+
+SELECTED-LATITUDE TC-MATCH SUMMARY
+TOTAL JTWC POINTS: 14376
+DETECTED POINTS: 12230
+DETECTION RATE (%):    85.07
+THETA500 RANGE (K):      323.600     338.220
+THETA300 RANGE (K):      335.900     359.190
+DTHETA RANGE (K):        8.840      25.700
+MIN THETA500 (K):    323.600
+MIN THETA300 (K):    335.900
+TC detection rate (% of selected JTWC points):    85.07
+Unmatched JTWC points in selected latitude range: 2146
+Unmatched rate (% of selected JTWC points):    14.93
+Matched + unmatched percentage (%):   100.00
+
+MATCHING-FAILURE DIAGNOSTICS FOR SELECTED JTWC POINTS
+Individual unmatched records: ./TC_THETA_OUT_TOTAL_WNP_ENP_INCLUDE_CP/ENP/tc_theta_unmatched_ENP.txt
+No ETC record at the same time: 0
+Same-time ETC records exist, but all are already used: 0
+Nearest unused same-time ETC farther than limit: 2146
+
+SELECTED-JTWC MATCHING DIAGNOSTICS (5-degree bins)
+BAND_DEG         JTWC   MATCHED UNMATCHED   NO_TIME NO_UNUSED  >MAX_KM    MATCH_%  %_OF_ALL_UNMATCHED
+    5.0- 10.0       207       195        12         0         0        12      94.20       0.56
+   10.0- 15.0      4740      4001       739         0         0       739      84.41      34.44
+   15.0- 20.0      6774      5980       794         0         0       794      88.28      37.00
+   20.0- 25.0      2655      2054       601         0         0       601      77.36      28.01
+NO_UNUSED means all same-time ETC records were already assigned to other JTWC points.
+>MAX_KM means the nearest unused same-time ETC center is farther than the limit.
+
+THETA SAMPLE SELECTION
+Theta-analysis latitude range [min,max) deg:      5.0    25.0
+Theta-analysis longitude range [min,max) deg E:     220.0    280.0
+All JTWC points in theta-analysis latitude range: 14376
+Matched JTWC points used for theta statistics: 12230
+Match rate inside theta-analysis latitude range (%):    85.07
+Theta samples used in statistics: 12230
+
+THETA DISTRIBUTION OF MATCHED JTWC POINTS BY LATITUDE
+BAND_DEG           N    MEAN500      P01_500      P05_500      P50_500    MEAN300      P01_300      P05_300      P50_300
+    5.0- 10.0      195      328.702      326.616      327.431      328.620      345.298      342.036      342.387      345.300
+   10.0- 15.0     4001      329.058      326.910      327.450      328.990      345.865      341.320      342.530      345.790
+   15.0- 20.0     5980      329.855      327.098      327.850      329.680      346.374      341.006      342.510      346.285
+   20.0- 25.0     2054      330.371      326.801      327.937      330.200      345.915      340.348      341.750      345.665
+
+VARIABLE       N       MEAN         SD        MIN        P01       P2.5        P05        P10        P25        P50        P75        P90        P95      P97.5        P99        MAX
+  THETA500   12230    329.662      1.453    323.600    326.956    327.330    327.660    328.060    328.690    329.460    330.420    331.550    332.410    333.130    334.040    338.220
+  THETA300   12230    346.113      2.502    335.900    340.863    341.657    342.350    343.090    344.360    345.985    347.688    349.300    350.330    351.360    352.954    359.190
+    DTHETA   12230     16.451      1.992      8.840     11.346     12.287     13.120     13.920     15.230     16.520     17.740     18.830     19.550     20.200     21.147     25.700
+
+CORE TC ENVELOPE (P05-P95; descriptive, not yet an optimized classifier)
+THETA500:      327.660     332.410
+THETA300:      342.350     350.330
+DTHETA  :       13.120      19.550
+Joint coverage of all three ranges:    0.795
+
+BROAD TC ENVELOPE (P01-P99; use this only as an initial removal rule)
+THETA500:      326.956     334.040
+THETA300:      340.863     352.954
+DTHETA  :       11.346      21.147
+Joint coverage of all three ranges:    0.954
+
+IMPORTANT: A percentile envelope describes the positive TC sample only.
+Before using it as the final ETC/TC separator, compare it with unmatched ETCs
+and quantify false positives, false negatives, and seasonal/latitude dependence.
